@@ -2,9 +2,8 @@ import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import PostIcons from "../components/post-icons"
-import Img from "gatsby-image"
-import Layout from "../layouts"
-
+import Layout from "../components/layout"
+import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 
 class PostTemplate extends Component {
@@ -13,6 +12,7 @@ class PostTemplate extends Component {
 
     return (
       <Layout>
+        <Link to="/blog-landing">All posts</Link>
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
         <PostIcons node={post} css={{ marginBottom: rhythm(1 / 2) }} />
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -33,6 +33,7 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      ...PostIcons
     }
   }
 `

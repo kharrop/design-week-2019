@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PostIcons from "../components/post-icons"
-import Layout from "../layouts"
+import Layout from "../components/layout"
 
 import { rhythm } from "../utils/typography"
 

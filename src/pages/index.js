@@ -5,16 +5,12 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-export const pageQuery = graphql`
+export const PageQuery = graphql`
   query {
-    allWordpressPost(sort: { fields: [date] }) {
-      edges {
-        node {
-          title
-          excerpt
-          slug
-        }
-      }
+    wordpressPage(slug: { eq: "random-page" }) {
+      id
+      title
+      content
     }
   }
 `
@@ -25,17 +21,14 @@ const IndexPage = ({ data }) => (
     <h1>Hi, people!!</h1>
     <p>Welcome to Design Week 2019.</p>
     <p>July 16-18, 2019</p>
+    Title from another page:
+    <h1 dangerouslySetInnerHTML={{ __html: data.wordpressPage.title }} />
+    Content from another page:
+    <p dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }} />
+    <Link to="/blog-landing/">Blog</Link>
     <div>
       <p>We're a very cool website you should return to often.</p>
     </div>
-    {data.allWordpressPost.edges.map(({ node }) => (
-      <div>
-        <Link to={node.slug} css={{ textDecoration: `none` }}>
-          <p>{node.title}</p>
-        </Link>
-        <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-      </div>
-    ))}
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
