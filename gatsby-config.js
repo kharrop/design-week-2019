@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Design Week 2019`,
@@ -38,8 +42,8 @@ module.exports = {
           wpcom_app_clientSecret:
             "tFeSCu64s6iJbUzRqaKFRp7bO0FhxKM3UxTIhLi8AoiYQDSgbWQnggPQnqC6UN5v",
           wpcom_app_clientId: "64972",
-          wpcom_user: "kn.harrop@gmail.com",
-          wpcom_pass: "nE7!q9ShQ$%%C6P^eEDdS!34X&SHbs!6j%2#k",
+          wpcom_user: process.env.WP_USERNAME,
+          wpcom_pass: process.env.WP_PASSWORD,
         },
 
         verboseOutput: false,
