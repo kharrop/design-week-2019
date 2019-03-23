@@ -34,14 +34,14 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        baseUrl: "kellydesigntest.wordpress.com",
+        baseUrl: "intuitdesignweek.wordpress.com",
         protocol: "https",
         hostingWPCOM: true,
         useACF: false,
         auth: {
           wpcom_app_clientSecret:
-            "tFeSCu64s6iJbUzRqaKFRp7bO0FhxKM3UxTIhLi8AoiYQDSgbWQnggPQnqC6UN5v",
-          wpcom_app_clientId: "64972",
+            "GOQd3VyQj3BE0d7iD8xIFIda7hNT8MZswmUsz1xQmJFRUWlWiCBvkFnfVoHPMGMg",
+          wpcom_app_clientId: "65141",
           wpcom_user: process.env.WP_USERNAME,
           wpcom_pass: process.env.WP_PASSWORD,
         },
