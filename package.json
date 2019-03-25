@@ -16,6 +16,7 @@
     "gatsby-plugin-sharp": "^2.0.30",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-source-instagram": "^0.4.0",
     "gatsby-source-wordpress": "^3.0.43",
     "gatsby-transformer-sharp": "^2.1.16",
     "patch-package": "^6.0.5",

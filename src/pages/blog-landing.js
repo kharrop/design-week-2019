@@ -8,10 +8,14 @@ import { FaRegClock } from "react-icons/fa"
 
 export const pageQuery = graphql`
   query {
-    allWordpressPost(sort: { fields: [date] }) {
+    allWordpressPost(sort: { order: DESC, fields: [date] }) {
       edges {
         node {
           title
+          featured_media {
+            source_url
+            alt_text
+          }
           excerpt
           content
           slug
@@ -39,15 +43,29 @@ const BlogLanding = ({ data }) => (
           borderBottom: "1px solid #eee",
         }}
       >
-        <Link to={node.slug} css={{ textDecoration: `none` }}>
-          <p>{node.title}</p>
+        <Link
+          to={node.slug}
+          css={{
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "top",
+          }}
+        >
+          <div style={{ width: "100%" }}>
+            <h1 dangerouslySetInnerHTML={{ __html: node.title }} />
+            <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <span>
+              <FaRegClock size={14} css={{ position: `relative`, bottom: 1 }} />
+              {` `}
+              {node.date}
+            </span>
+          </div>
+          <img
+            alt={node.featured_media.alt_text}
+            src={node.featured_media.source_url}
+            style={{ height: "120px", float: "right", marginLeft: "40px" }}
+          />
         </Link>
-        <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-        <span>
-          <FaRegClock size={14} css={{ position: `relative`, bottom: 1 }} />
-          {` `}
-          {node.date}
-        </span>
       </div>
     ))}
   </Layout>
