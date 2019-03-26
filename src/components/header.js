@@ -22,7 +22,18 @@ const HeaderStyle = styled.div`
 		top: 0;
     width: 30%;
     z-index: 5;
-
+  &:after {
+    content: "";
+    opacity: .3;
+    background-color: #000;
+    height: 100%;
+    display: block;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
 		> * {
 			@include vendor('flex-shrink', '0');
 			width: 100%;
@@ -108,7 +119,7 @@ const Header = ({ siteTitle }) => (
     </p>
     <ul>
       <li>
-        <Link to="/#schedule">Schedule</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
         <Link to="/blog-landing">Articles</Link>
