@@ -4,13 +4,14 @@ import PostIcons from "../components/post-icons"
 import Layout from "../components/layout"
 
 import { rhythm } from "../utils/typography"
-
+import { Link } from "gatsby"
 class PageTemplate extends Component {
   render() {
     const currentPage = this.props.data.wordpressPage
 
     return (
       <Layout>
+        <Link to="/">Back to home</Link>
         <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
         <PostIcons node={currentPage} css={{ marginBottom: rhythm(1 / 2) }} />
         <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />

@@ -1,8 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
+
 export const pageQuery = graphql`
   query {
-    allInstaNode {
+    allInstaNode(sort: { order: DESC, fields: [timestamp] }) {
       totalCount
       edges {
         node {
@@ -35,15 +36,48 @@ export const pageQuery = graphql`
 const Media = ({ data }) => (
   <Layout>
     <div style={{ marginBottom: "16px" }}>
-      <strong>{data.allInstaNode.totalCount}</strong>&nbsp;Instagram photos
-      tagged with #icecream
+      <h1
+        style={{
+          fontWeight: "normal",
+          marginBottom: "1em",
+          lineHeight: "1.3em",
+        }}
+      >
+        <strong>{data.allInstaNode.totalCount}</strong>&nbsp;Instagram photos
+        tagged with{" "}
+        <a
+          href="https://www.instagram.com/explore/tags/dribbble/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          #dribbble
+        </a>
+      </h1>
     </div>
 
     <div className="photo-list">
       {data.allInstaNode.edges.map(({ node }) => (
-        <div>
-          <img alt="ice cream" src={node.localFile.publicURL} width="200" />
-          <p>{node.timestamp}</p>
+        <div style={{ display: "inline" }} key={node.id}>
+          <a
+            href={"https://www.instagram.com/p/" + node.id}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              width: "33%",
+              height: "33%",
+              paddingRight: "14px",
+              paddingBottom: "14px",
+            }}
+          >
+            <img
+              alt="ice cream"
+              src={node.localFile.publicURL}
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </a>
         </div>
       ))}
     </div>
