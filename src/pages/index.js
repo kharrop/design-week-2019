@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
 const Placeholder = styled.div`
   background-color: #eee;
@@ -35,6 +36,11 @@ export const PageQuery = graphql`
           caption
           localFile {
             publicURL
+            childImageSharp {
+              fluid(maxWidth: 150) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
           thumbnails {
             src
@@ -56,11 +62,6 @@ export const PageQuery = graphql`
   }
 `
 
-const ImageWrapper = styled.div`
-  overflow: hidden;
-  text-align: center;
-`
-
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -77,32 +78,33 @@ const IndexPage = ({ data }) => (
     <Placeholder>
       <div className="align-center schedule">Schedule placeholder</div>
     </Placeholder>
-    <Placeholder>
+    <div style={{ margin: "3em 0" }}>
       <div
-        className="image-list"
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-        }}
+        className="photo-list"
+        style={{ display: "flex", alignItems: "baseline" }}
       >
         {data.allInstaNode.edges.map(({ node }) => (
-          <ImageWrapper key={node.id}>
+          <div style={{ width: "33%", height: "33%" }} key={node.id}>
             <a
               href={"https://www.instagram.com/p/" + node.id}
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                display: "block",
+                paddingRight: "14px",
+                paddingBottom: "14px",
+              }}
             >
-              <img
-                alt="ice cream"
-                src={node.thumbnails[0].src}
-                style={{ objectFit: "cover", width: "150px", height: "150px" }}
+              <Img
+                alt="dribbble"
+                fluid={node.localFile.childImageSharp.fluid}
               />
             </a>
-          </ImageWrapper>
+          </div>
         ))}
       </div>
       <Link to="/media">More images</Link>
-    </Placeholder>
+    </div>
 
     <Placeholder>
       Some other neat page

@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-
+import Img from "gatsby-image"
 export const pageQuery = graphql`
   query {
     allInstaNode(sort: { order: DESC, fields: [timestamp] }) {
@@ -17,6 +17,11 @@ export const pageQuery = graphql`
           caption
           localFile {
             publicURL
+            childImageSharp {
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
           thumbnails {
             src
@@ -43,8 +48,8 @@ const Media = ({ data }) => (
           lineHeight: "1.3em",
         }}
       >
-        <strong>{data.allInstaNode.totalCount}</strong>&nbsp;Instagram photos
-        tagged with{" "}
+        <strong>{data.allInstaNode.totalCount}</strong>&nbsp;recent Instagram
+        photos tagged with{" "}
         <a
           href="https://www.instagram.com/explore/tags/dribbble/?hl=en"
           target="_blank"
@@ -57,26 +62,21 @@ const Media = ({ data }) => (
 
     <div className="photo-list">
       {data.allInstaNode.edges.map(({ node }) => (
-        <div style={{ display: "inline" }} key={node.id}>
+        <div
+          style={{ width: "33%", height: "33%", display: "inline-block" }}
+          key={node.id}
+        >
           <a
             href={"https://www.instagram.com/p/" + node.id}
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              display: "inline-block",
-              width: "33%",
-              height: "33%",
+              display: "block",
               paddingRight: "14px",
               paddingBottom: "14px",
             }}
           >
-            <img
-              alt="ice cream"
-              src={node.localFile.publicURL}
-              style={{
-                objectFit: "cover",
-              }}
-            />
+            <Img alt="dribbble" fluid={node.localFile.childImageSharp.fluid} />
           </a>
         </div>
       ))}
