@@ -7,7 +7,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "dotenv": "^6.2.0",
-    "gatsby": "^2.2.6",
+    "gatsby": "^2.3.23",
     "gatsby-cli": "^2.4.14",
     "gatsby-image": "^2.0.32",
     "gatsby-plugin-manifest": "^2.0.22",
@@ -17,7 +17,7 @@
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-source-instagram": "^0.4.0",
-    "gatsby-source-wordpress": "^3.0.43",
+    "gatsby-source-wordpress": "^3.0.54",
     "gatsby-transformer-sharp": "^2.1.16",
     "patch-package": "^6.0.5",
     "prop-types": "^15.7.2",
@@ -38,7 +38,6 @@
   ],
   "license": "MIT",
   "scripts": {
-    "postinstall": "patch-package",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
