@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styled from "styled-components"
 
 import { FaRegClock } from "react-icons/fa"
 
@@ -24,6 +25,12 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+
+const FeaturedImg = styled.div`
+  height: 120px;
+  float: right;
+  margin-left: 40px;
 `
 
 const BlogLanding = ({ data }) => (
@@ -61,10 +68,9 @@ const BlogLanding = ({ data }) => (
             </span>
           </div>
           {node.featured_media && (
-            <img
+            <FeaturedImg
               alt={node.featured_media.alt_text}
               src={node.featured_media.source_url}
-              style={{ height: "120px", float: "right", marginLeft: "40px" }}
             />
           )}
         </Link>
