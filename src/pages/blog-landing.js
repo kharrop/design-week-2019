@@ -60,11 +60,13 @@ const BlogLanding = ({ data }) => (
               {node.date}
             </span>
           </div>
-          <img
-            alt={node.featured_media.alt_text}
-            src={node.featured_media.source_url}
-            style={{ height: "120px", float: "right", marginLeft: "40px" }}
-          />
+          {node.featured_media && (
+            <img
+              alt={node.featured_media.alt_text}
+              src={node.featured_media.source_url}
+              style={{ height: "120px", float: "right", marginLeft: "40px" }}
+            />
+          )}
         </Link>
       </div>
     ))}
