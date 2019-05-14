@@ -2,18 +2,20 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import overlay from "../images/overlay.png"
-console.log(overlay)
+import image from "../images/home-bg.jpg"
+import Branding from "../assets/svg/main-brand.svg"
+
 const HeaderStyle = styled.div`
 
 		@include vendor('display', 'flex');
 		@include vendor('flex-direction', 'column');
 		@include vendor('align-items', 'flex-end');
 		@include vendor('justify-content', 'space-between');
-    background-image: url(/static/overlay-e169e7e6a11f4f7385273662bf3da87d.png), url("https://images.unsplash.com/photo-1485841938031-1bf81239b815?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60");
+    background-image: url(${image});
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
     color: #fff;
-    font-family: 'AvenirNext forINTUIT';
 		height: 100%;
 		left: 0;
 		padding: 4em 3em;
@@ -22,18 +24,7 @@ const HeaderStyle = styled.div`
 		top: 0;
     width: 30%;
     z-index: 5;
-  &:after {
-    content: "";
-    opacity: .3;
-    background-color: #000;
-    height: 100%;
-    display: block;
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
+ 
 		> * {
 			@include vendor('flex-shrink', '0');
 			width: 100%;
@@ -101,34 +92,33 @@ const HeaderStyle = styled.div`
 }
 `
 
+const BrandingWrapper = styled.div`
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+`
+
 const Header = ({ siteTitle }) => (
   <HeaderStyle>
-    <h1>
-      <Link
-        to="/"
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-        }}
-      >
-        {siteTitle}
-      </Link>
-    </h1>
-    <p className="header-description">
-      An inspiring week of design and immersive experiences.
-    </p>
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/blog-landing">Articles</Link>
-      </li>
-      <li>
-        <Link to="/media">Media</Link>
-      </li>
-    </ul>
-    <footer>© {new Date().getFullYear()}, Built by PCG</footer>
+    <Link
+      to="/"
+      style={{
+        color: `white`,
+        textDecoration: `none`,
+      }}
+    >
+      {/*   {siteTitle} */}
+      <BrandingWrapper>
+        <Branding />
+      </BrandingWrapper>
+    </Link>
+
+    {/* 
+    <footer>© {new Date().getFullYear()}, Built by PCG</footer> */}
   </HeaderStyle>
 )
 

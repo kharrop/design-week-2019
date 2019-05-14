@@ -2,27 +2,30 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import Schedule from "../components/schedule"
 
-const Placeholder = styled.div`
-  background-color: #eee;
-  border-radius: 4px;
-  margin: 0 0 2em;
-  padding: 2em;
-  font-size: 1em;
-  .align-center {
-    text-align: center;
+const Wrapper = styled.div`
+  a {
+    color: #a200a1;
   }
-  .schedule {
-    padding: 4em 0;
+  .gatsby-image-wrapper {
+    transition: box-shadow 0.2s ease-in-out;
+    &:hover {
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    }
+  }
+`
+const Statement = styled.h1`
+  a {
+    font-weight: 500;
   }
 `
 
 export const PageQuery = graphql`
   query {
-    allInstaNode(sort: { order: DESC, fields: [timestamp] }, limit: 3) {
+    allInstaNode(sort: { order: DESC, fields: [timestamp] }, limit: 4) {
       totalCount
       edges {
         node {
@@ -37,7 +40,7 @@ export const PageQuery = graphql`
           localFile {
             publicURL
             childImageSharp {
-              fluid(maxWidth: 150) {
+              fluid(quality: 100, maxWidth: 150) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -54,7 +57,7 @@ export const PageQuery = graphql`
         }
       }
     }
-    wordpressPage(slug: { eq: "random-page" }) {
+    wordpressPage(slug: { eq: "about" }) {
       id
       title
       content
@@ -65,54 +68,40 @@ export const PageQuery = graphql`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <Wrapper>
+      <Statement>
+        Three <Link to="/about">inspiring days</Link> of design & immersive
+        experiences to engage and nurture your creativity.
+      </Statement>
 
-    <h1>Hi, people!!</h1>
-    <p>Welcome to Design Week 2019.</p>
-    <p id="schedule" style={{ paddingTop: "20px" }}>
-      July 16-18, 2019
-    </p>
-
-    <Placeholder>
-      <div className="align-center schedule">Schedule placeholder</div>
-    </Placeholder>
-    <div style={{ margin: "3em 0" }}>
-      <div
-        className="photo-list"
-        style={{ display: "flex", alignItems: "baseline" }}
-      >
-        {data.allInstaNode.edges.map(({ node }) => (
-          <div style={{ width: "33%", height: "33%" }} key={node.id}>
-            <a
-              href={"https://www.instagram.com/p/" + node.id}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "block",
-                paddingRight: "14px",
-                paddingBottom: "14px",
-              }}
-            >
-              <Img
-                alt="dribbble"
-                fluid={node.localFile.childImageSharp.fluid}
-              />
-            </a>
-          </div>
-        ))}
+      <Schedule />
+      <div style={{ margin: "3em 0" }}>
+        <div
+          className="photo-list"
+          style={{ display: "flex", alignItems: "baseline" }}
+        >
+          {data.allInstaNode.edges.map(({ node }) => (
+            <div style={{ width: "33%", height: "33%" }} key={node.id}>
+              <a
+                href={"https://www.instagram.com/p/" + node.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "block",
+                  paddingRight: "14px",
+                  paddingBottom: "14px",
+                }}
+              >
+                <Img
+                  alt="pcgdesignweek"
+                  fluid={node.localFile.childImageSharp.fluid}
+                />
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
-      <Link to="/media">More images</Link>
-    </div>
-
-    <Placeholder>
-      Some other neat page
-      <Link to="/random-page" style={{ textDecoration: "none" }}>
-        <h1 dangerouslySetInnerHTML={{ __html: data.wordpressPage.title }} />
-      </Link>
-      <Link to="/blog-landing/">More articles</Link>
-    </Placeholder>
+    </Wrapper>
   </Layout>
 )
 

@@ -34,13 +34,13 @@ const FeaturedImg = styled.div`
   margin-left: 40px;
 `
 
-const BlogLanding = ({ data }) => (
+const Speakers = ({ data }) => (
   <Layout>
-    <SEO title="Blog" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Speakers" keywords={[`gatsby`, `application`, `react`]} />
     <Link to="/" style={{ marginBottom: "1em", display: "block" }}>
       Back to home
     </Link>
-    <h1 style={{ marginBottom: "1em" }}>Blog</h1>
+    <h1 style={{ marginBottom: "1em" }}>Speakers</h1>
 
     {data.allWordpressPost.edges.map(({ node }) => (
       <div
@@ -81,4 +81,4 @@ const BlogLanding = ({ data }) => (
   </Layout>
 )
 
-export default BlogLanding
+export default Speakers

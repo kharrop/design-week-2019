@@ -10,6 +10,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -56,7 +64,7 @@ module.exports = {
       resolve: `gatsby-source-instagram`,
       options: {
         type: `hashtag`,
-        hashtag: `dribbble`,
+        hashtag: `pcgdesignweek`,
       },
     },
 
