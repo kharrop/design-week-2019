@@ -109,7 +109,7 @@ const Navigation = () => (
         target="_blank"
         activeClassName="active"
       >
-        #pcg-designweek
+        #designweek
       </Button>
     </NavContent>
   </NavStyle>
