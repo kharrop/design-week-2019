@@ -105,7 +105,7 @@ const Navigation = () => (
         </li>
       </NavLinks>
       <Button
-        href="https://intuit-teams.slack.com/messages/GFZFL8UHW/"
+        href="https://intuit-teams.slack.com/messages/CJNRX9M7W/"
         target="_blank"
         activeClassName="active"
       >
