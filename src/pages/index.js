@@ -5,8 +5,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import Schedule from "../components/schedule"
-import Header from "../components/header"
-import Media from "react-media"
+
+import image from "../images/home-bg.jpg"
+import Branding from "../assets/svg/main-brand.svg"
+
 const Wrapper = styled.div`
   a {
     color: #a200a1;
@@ -59,10 +61,23 @@ const PhotoList = styled.div`
 `
 
 const HeaderWrapper = styled.div`
-  margin-bottom: 30px;
-  margin-top: -50px;
-  margin-left: -30px;
-  margin-right: -30px;
+  display: none;
+  @media screen and (max-width: 900px) {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: -50px;
+    margin-left: -30px;
+    margin-right: -30px;
+    background-image: url(${image});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 20%;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
 `
 
 export const PageQuery = graphql`
@@ -110,15 +125,10 @@ export const PageQuery = graphql`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Media query="(max-width: 799px)">
-      {matches =>
-        matches && (
-          <HeaderWrapper>
-            <Header />
-          </HeaderWrapper>
-        )
-      }
-    </Media>
+
+    <HeaderWrapper>
+      <Branding />
+    </HeaderWrapper>
 
     <Wrapper>
       <Statement>

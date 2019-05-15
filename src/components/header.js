@@ -20,7 +20,6 @@ const HeaderStyle = styled.div`
 		left: 0;
 		padding: 4em 3em;
 		position: fixed;
-		text-align: left;
 		top: 0;
     width: 30%;
     z-index: 5;
@@ -73,23 +72,8 @@ const HeaderStyle = styled.div`
   }
   
   @media screen and (max-width: 900px){
-    background-attachment: scroll;
-    background-position: 0;
-    background-size: cover;
-    left: auto;
-    padding: 10%;
-    position: relative;
-    text-align: center;
-    top: auto;
-    width: 100%;
-    display: block;
-    height: auto;
-    h1 {
-      margin-top: 2em;
-    }
-    footer {
-      position: static;
-    }
+   display: none;
+ 
 }
 `
 

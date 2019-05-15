@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import Media from "react-media"
 import Header from "./header"
 import Navigation from "./navigation"
 import "./layout.css"
@@ -45,11 +44,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Media query="(min-width: 800px)">
-          {matches =>
-            matches && <Header siteTitle={data.site.siteMetadata.title} />
-          }
-        </Media>
+        <Header />
         <Navigation />
         <MainStyle>{children}</MainStyle>
       </>
