@@ -110,8 +110,7 @@ export const PageQuery = graphql`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-
-    <Media query="(max-width: 800px)">
+    <Media query="(max-width: 799px)">
       {matches =>
         matches && (
           <HeaderWrapper>
@@ -120,6 +119,7 @@ const IndexPage = ({ data }) => (
         )
       }
     </Media>
+
     <Wrapper>
       <Statement>
         Three <Link to="/about">inspiring days</Link> of design & immersive
