@@ -111,7 +111,7 @@ const BrandingWrapper = styled.div`
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderStyle className="header">
+  <HeaderStyle>
     <Link
       to="/"
       style={{
