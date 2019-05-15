@@ -31,6 +31,16 @@ const TabsWrapper = styled.div`
       color: #10a472 !important;
     }
   }
+  @media screen and (max-width: 900px) {
+    ul {
+      position: relative;
+      padding-top: 0;
+      top: 0;
+    }
+    li {
+      font-size: 16px;
+    }
+  }
 `
 
 const PanelWrapper = styled.div`

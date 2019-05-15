@@ -16,8 +16,11 @@ const NavStyle = styled.div`
     list-style: none;
     margin: 0;
   }
-  @media screen and (max-width: 980px) {
-    display: none;
+  @media screen and (max-width: 900px) {
+    margin-left: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
   }
 `
 
@@ -28,15 +31,19 @@ const NavContent = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 900px) {
+    margin: 0 1em;
+  }
 `
 
 const NavLinks = styled.ul`
   display: flex;
+
   li {
-    margin-right: 40px;
+    margin-right: 30px;
     a {
       display: block;
-      padding: 16px 0;
+      padding: 16px 8px;
       text-transform: uppercase;
       font-size: 12px;
       color: #8d9096;
@@ -50,6 +57,11 @@ const NavLinks = styled.ul`
       &.active {
         color: #a200a1;
       }
+    }
+  }
+  @media screen and (max-width: 320px) {
+    li {
+      margin-right: 12px;
     }
   }
 `

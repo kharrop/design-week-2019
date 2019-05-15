@@ -72,17 +72,18 @@ const HeaderStyle = styled.div`
     }
   }
   
-  @media screen and (max-width: 980px){
+  @media screen and (max-width: 900px){
     background-attachment: scroll;
     background-position: 0;
     background-size: cover;
     left: auto;
-    padding: 4em 2em;
+    padding: 10%;
     position: relative;
     text-align: center;
     top: auto;
     width: 100%;
     display: block;
+    height: auto;
     h1 {
       margin-top: 2em;
     }
@@ -96,14 +97,21 @@ const BrandingWrapper = styled.div`
   margin-top: 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
   svg {
     width: 100%;
     height: auto;
   }
+  @media screen and (max-width: 900px) {
+    margin-top: 0;
+    svg {
+      height: 80%;
+    }
+  }
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderStyle>
+  <HeaderStyle className="header">
     <Link
       to="/"
       style={{

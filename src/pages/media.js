@@ -18,7 +18,16 @@ const Wrapper = styled.div`
     }
   }
 `
-
+const PhotoList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: start;
+  }
+`
 export const pageQuery = graphql`
   query {
     allInstaNode(sort: { order: DESC, fields: [timestamp] }) {
@@ -72,20 +81,15 @@ const Media = ({ data }) => (
       </Statement>
     </div>
     <Wrapper>
-      <div className="photo-list">
+      <PhotoList>
         {data.allInstaNode.edges.map(({ node }) => (
-          <div
-            style={{ width: "33%", height: "33%", display: "inline-block" }}
-            key={node.id}
-          >
+          <div className="gram" key={node.id}>
             <a
               href={"https://www.instagram.com/p/" + node.id}
               target="_blank"
               rel="noopener noreferrer"
               style={{
                 display: "block",
-                paddingRight: "14px",
-                paddingBottom: "14px",
               }}
             >
               <Img
@@ -95,7 +99,7 @@ const Media = ({ data }) => (
             </a>
           </div>
         ))}
-      </div>
+      </PhotoList>
     </Wrapper>
   </Layout>
 )
