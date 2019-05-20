@@ -89,8 +89,12 @@ const Schedule = () => (
       </TabList>
       <PanelWrapper>
         <TabPanel>
-          <h2>Day 1: Seeds</h2>
-          <p>Sprout inspiration and curiosity</p>
+          <h2>Day 1: Plant seeds</h2>
+          <p>
+            Plant seeds of inspiration from emerging trends and industry experts
+            that will help give you new perspectives on the experiences you
+            create.
+          </p>
           <Placeholder>
             <p className="align-center">
               <span role="img" aria-label="sprout">
@@ -103,7 +107,10 @@ const Schedule = () => (
         </TabPanel>
         <TabPanel>
           <h2>Day 2: Cultivate</h2>
-          <p>Grow your craft, capability and leadership skills</p>
+          <p>
+            Cultivate new skills that will help you approach your craft in a new
+            way, develop your leadership abilities and produce better results.
+          </p>
           <Placeholder>
             <p className="align-center">
               <span role="img" aria-label="tree">
@@ -116,7 +123,11 @@ const Schedule = () => (
         </TabPanel>
         <TabPanel>
           <h2>Day 3: Harvest</h2>
-          <p>Invest in personal and business goals and outcomes</p>
+          <p>
+            Harvest the fruit of the past year, reflect on where we are as a
+            company, recognize our achievements and share our prosperity with
+            the community.
+          </p>
           <Placeholder>
             <p className="align-center">
               <span role="img" aria-label="apple">
