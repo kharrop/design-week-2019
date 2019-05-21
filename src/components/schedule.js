@@ -60,7 +60,7 @@ const Placeholder = styled.div`
   font-family: "Sriracha", cursive;
   border-radius: 4px;
   margin: 0 0 60px;
-  padding: 16em 2em;
+  padding: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
