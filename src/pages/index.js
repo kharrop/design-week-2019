@@ -5,9 +5,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import Schedule from "../components/schedule"
-
+import Button from "../components/button"
 import image from "../images/home-bg.jpg"
-import Branding from "../assets/svg/main-brand.svg"
+import Branding from "../images/svg/main-brand.svg"
 
 const Wrapper = styled.div`
   a {
@@ -17,23 +17,6 @@ const Wrapper = styled.div`
     transition: box-shadow 0.2s ease-in-out;
     &:hover {
       box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-    }
-  }
-  .button {
-    text-transform: uppercase;
-    border-radius: 30px;
-    border: 2px solid #555;
-    color: #555;
-    text-decoration: none;
-    padding: 4px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    display: table;
-    margin: 40px auto 40px;
-    letter-spacing: 2px;
-    transition: background-color 0.2s ease-in-out;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
     }
   }
 `
@@ -122,6 +105,11 @@ export const PageQuery = graphql`
   }
 `
 
+const ButtonWrapper = styled.div`
+  display: table;
+  margin: 40px auto 40px;
+`
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -157,9 +145,11 @@ const IndexPage = ({ data }) => (
           </div>
         ))}
       </PhotoList>
-      <Link className="button" to="/media">
-        More media
-      </Link>
+      <ButtonWrapper>
+        <Button className="outline" href="/media" target="_self">
+          More media
+        </Button>
+      </ButtonWrapper>
     </Wrapper>
   </Layout>
 )

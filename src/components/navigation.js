@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import ButtonLink from "./button-link"
 
 const NavStyle = styled.div`
   margin-left: 30%;
@@ -65,28 +66,10 @@ const NavLinks = styled.ul`
     }
   }
 `
-
-const Button = styled.a`
+const ButtonWrapper = styled.div`
   position: absolute;
   right: 0;
-  border-radius: 20px;
-  background-color: #10a472;
-  border: 0 none;
-  color: #fff;
-  font-weight: 600;
-  padding: 2px 16px;
-  letter-spacing: 0.1em;
-  font-size: 12px;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  outline: 0 none;
-  &:hover {
-    background-color: #0a8a5f;
-  }
 `
-
 const Navigation = () => (
   <NavStyle>
     <NavContent>
@@ -116,13 +99,15 @@ const Navigation = () => (
           </Link>
         </li>
       </NavLinks>
-      <Button
-        href="https://intuit-teams.slack.com/messages/CJNRX9M7W/"
-        target="_blank"
-        activeClassName="active"
-      >
-        #designweek
-      </Button>
+      <ButtonWrapper>
+        <ButtonLink
+          href="https://intuit-teams.slack.com/messages/CJNRX9M7W/"
+          target="_blank"
+          activeClassName="active"
+        >
+          #designweek
+        </ButtonLink>
+      </ButtonWrapper>
     </NavContent>
   </NavStyle>
 )

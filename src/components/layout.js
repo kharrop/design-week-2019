@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Navigation from "./navigation"
-import "./layout.css"
+import "../assets/css/layout.scss"
 import styled from "styled-components"
 
 const MainStyle = styled.div`

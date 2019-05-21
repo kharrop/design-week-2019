@@ -67,6 +67,7 @@ module.exports = {
         hashtag: `pcgdesignweek`,
       },
     },
+    `gatsby-plugin-sass`,
 
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,

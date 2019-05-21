@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import image from "../images/home-bg.jpg"
-import Branding from "../assets/svg/main-brand.svg"
+import Branding from "../images/svg/main-brand.svg"
 
 const HeaderStyle = styled.div`
 
