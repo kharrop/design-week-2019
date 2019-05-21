@@ -120,8 +120,9 @@ const IndexPage = ({ data }) => (
 
     <Wrapper>
       <Statement>
-        Three <Link to="/about">days of inspiring</Link> experiences to engage
-        and nurture your creativity.
+        Three days of{" "}
+        <Link to="/icymi-design-week-2018">inspiring experiences</Link> to
+        engage and nurture your creativity.
       </Statement>
 
       <Schedule />
