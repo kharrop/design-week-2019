@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 
 import { FaRegClock } from "react-icons/fa"
-
+import Form from "../components/form"
 export const pageQuery = graphql`
   query {
     allWordpressPost(sort: { order: DESC, fields: [date] }) {
@@ -78,6 +78,40 @@ const BlogLanding = ({ data }) => (
         </Link>
       </div>
     ))}
+
+    <Form>
+      <p>
+        <label>
+          Name
+          <br /> <input type="text" name="name" placeholder="Symmetra" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Email <br />
+          <input
+            type="email"
+            name="email"
+            placeholder="symmetra@overwatch.com"
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message <br />
+          <textarea
+            rows="4"
+            name="message"
+            placeholder="Write a short message..."
+          />
+        </label>
+      </p>
+      <p>
+        <button className="outline" type="submit">
+          Send
+        </button>
+      </p>
+    </Form>
   </Layout>
 )
 
