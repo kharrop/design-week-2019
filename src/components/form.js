@@ -35,7 +35,34 @@ const Form = ({ children }) => (
     method="POST"
     data-netlify="true"
   >
-    {children}
+    <input type="hidden" name="form-name" value="contact" />
+    <p>
+      <label>
+        Name
+        <br /> <input type="text" name="name" placeholder="Symmetra" />
+      </label>
+    </p>
+    <p>
+      <label>
+        Email <br />
+        <input type="email" name="email" placeholder="symmetra@overwatch.com" />
+      </label>
+    </p>
+    <p>
+      <label>
+        Message <br />
+        <textarea
+          rows="4"
+          name="message"
+          placeholder="Write a short message..."
+        />
+      </label>
+    </p>
+    <p>
+      <button className="outline" type="submit">
+        Send
+      </button>
+    </p>
   </FormWrapper>
 )
 
