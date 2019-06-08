@@ -33,13 +33,15 @@ const NavContent = styled.div`
   display: flex;
   align-items: center;
   @media screen and (max-width: 900px) {
-    margin: 0 1em;
+    padding: 0 1em;
+    overflow-x: auto;
+    margin: 0;
   }
 `
 
 const NavLinks = styled.ul`
   display: flex;
-
+  flex-grow: 1;
   li {
     margin-right: 30px;
     a {
@@ -60,6 +62,11 @@ const NavLinks = styled.ul`
       }
     }
   }
+  @media screen and (max-width: 450px) {
+    li {
+      margin-right: 20px;
+    }
+  }
   @media screen and (max-width: 320px) {
     li {
       margin-right: 12px;
@@ -67,8 +74,14 @@ const NavLinks = styled.ul`
   }
 `
 const ButtonWrapper = styled.div`
-  position: absolute;
-  right: 0;
+  @media screen and (max-width: 900px) {
+    position: relative;
+    margin-top: -3px;
+    margin-left: 1em;
+  }
+  @media screen and (max-width: 413px) {
+    padding-right: 1em;
+  }
 `
 const Navigation = () => (
   <NavStyle>
@@ -86,13 +99,13 @@ const Navigation = () => (
           </Link>
         </li>
           */}
-        {/*   
+
         <li>
           <Link to="/blog-landing" activeClassName="active">
-            Articles
+            Blog
           </Link>
         </li>
-        */}
+
         <li>
           <Link to="/media" activeClassName="active">
             Media
