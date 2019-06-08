@@ -58,6 +58,7 @@ const Wrapper = styled.div`
     img {
       width: 100%;
       display: block;
+      height: auto;
     }
     .content {
       width: 100%;
