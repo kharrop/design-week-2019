@@ -107,7 +107,7 @@ export const PageQuery = graphql`
 
 const ButtonWrapper = styled.div`
   display: table;
-  margin: 40px auto 40px;
+  margin: 40px auto 100px;
 `
 
 const IndexPage = ({ data }) => (

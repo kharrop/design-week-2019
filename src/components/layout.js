@@ -17,7 +17,7 @@ const MainStyle = styled.div`
   margin-left: 30%;
   margin-top: 54px;
   max-width: 54em;
-  padding: 4em 4em 4em;
+  padding: 4em 4em 0 4em;
   width: 70%;
   @media screen and (max-width: 900px) {
     margin: 0;
