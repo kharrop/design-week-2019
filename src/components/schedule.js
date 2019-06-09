@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import styled from "styled-components"
 
 const TabsWrapper = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   ul,
   li {
     list-style: none;
@@ -59,7 +59,6 @@ const Placeholder = styled.div`
   background-color: #eee;
   font-family: "Sriracha", cursive;
   border-radius: 4px;
-  margin: 0 0 60px;
   padding: 2em;
   display: flex;
   align-items: center;
