@@ -29,7 +29,6 @@ const Statement = styled.h1`
 const PhotoList = styled.div`
   display: grid;
   grid-gap: 20px;
-  align-items: baseline;
   grid-template-columns: repeat(4, 1fr);
   margin: 30px 0;
   @media screen and (max-width: 900px) {
@@ -127,25 +126,27 @@ const IndexPage = ({ data }) => (
 
       <Schedule />
 
-      <PhotoList>
-        {data.allInstaNode.edges.map(({ node }) => (
-          <div className="gram" key={node.id}>
-            <a
-              href={"https://www.instagram.com/p/" + node.id}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "block",
-              }}
-            >
-              <Img
-                alt="pcgdesignweek"
-                fluid={node.localFile.childImageSharp.fluid}
-              />
-            </a>
-          </div>
-        ))}
-      </PhotoList>
+      <Wrapper>
+        <PhotoList>
+          {data.allInstaNode.edges.map(({ node }) => (
+            <div className="gram" key={node.id}>
+              <a
+                href={"https://www.instagram.com/p/" + node.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "block",
+                }}
+              >
+                <Img
+                  alt="pcgdesignweek"
+                  fluid={node.localFile.childImageSharp.fluid}
+                />
+              </a>
+            </div>
+          ))}
+        </PhotoList>
+      </Wrapper>
       <ButtonWrapper>
         <Button className="outline" href="/media" target="_self">
           More media
