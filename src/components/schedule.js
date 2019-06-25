@@ -82,9 +82,6 @@ const Event = styled.div`
       line-height: 1.4;
       margin-bottom: 4px;
     }
-    .speaker {
-      font-size: 0.8rem;
-    }
   }
 `
 
