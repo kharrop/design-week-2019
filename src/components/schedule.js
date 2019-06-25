@@ -52,22 +52,38 @@ const PanelWrapper = styled.div`
   p {
     font-size: 15px;
     color: #777;
+    margin-bottom: 40px;
   }
 `
 
-const Placeholder = styled.div`
-  background-color: #eee;
-  font-family: "Sriracha", cursive;
-  border-radius: 4px;
-  padding: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .align-center {
-    text-align: center;
-    font-size: 1em;
-    color: #999;
-    margin: 20px 0;
+const Event = styled.div`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f4f4f4;
+  .topic {
+    font-weight: 600;
+  }
+  .speaker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+  }
+  @media screen and (max-width: 400px) {
+    display: block;
+    .topic {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    .time {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .speaker {
+      font-size: 0.8rem;
+    }
   }
 `
 
@@ -75,6 +91,103 @@ const Divider = styled.span`
   padding: 0 32px;
   color: #bbb;
 `
+
+const Days = [
+  {
+    day: "Tuesday",
+    data: [
+      {
+        time: "9 - 9:30 a.m.",
+        talk: "Welcome Remarks",
+        speaker: "",
+      },
+      {
+        time: "9:30 - 10:30 a.m.",
+        talk: "Data Mindfulness",
+        speaker: "Sheetal Narvariya",
+      },
+      {
+        time: "10:45 - 11:45 a.m.",
+        talk: "Designing the Intersection of Government, Cancer and the People",
+        speaker: "Kara DeFrias",
+      },
+      {
+        time: "1:15 - 2:15 p.m.",
+        talk: "Design Week Keynote Address",
+        speaker: "Diego Rodriguez",
+      },
+      {
+        time: "2:30 - 5:45 p.m.",
+        talk: "Accessibility Design Champions",
+        speaker: "Ace Vu and Ted Drake",
+      },
+      {
+        time: "6 - 8 p.m.",
+        talk: "Design Week Social",
+        speaker: "",
+      },
+    ],
+  },
+  {
+    day: "Wednesday",
+    data: [
+      {
+        time: "9 a.m. – 12:15 p.m.",
+        talk: "Using Data to Tell Your Story",
+        speaker: "Ben Blank and Justin Marr",
+      },
+      {
+        time: "1:45 - 2:45 p.m.",
+        talk: "Good Code, Bad Code",
+        speaker: "Kelly Harrop",
+      },
+      {
+        time: "3 - 4 p.m.",
+        talk: "Doodle with Your Noodle",
+        speaker: "Paul Goode",
+      },
+    ],
+  },
+  {
+    day: "Thursday",
+    data: [
+      {
+        time: "9 a.m. – 12 p.m.",
+        talk: "We Care & Give Back",
+        speaker: "ManeGait",
+      },
+      {
+        time: "1:30 - 2:30 p.m.",
+        talk: "Reflections on our Big Bets",
+        speaker: "Panel discussion",
+      },
+      {
+        time: "2:45 - 3:45 p.m.",
+        talk: "2019 Design Awards",
+        speaker: "",
+      },
+      {
+        time: "3:45 - 4:15 p.m.",
+        talk: "Closing Remarks",
+        speaker: "",
+      },
+    ],
+  },
+]
+
+const items = Days.map((item, index) => (
+  <div key={index}>
+    {item.data.map((c, i) => (
+      <Event key={i}>
+        <div className="time">{c.time}</div>
+        <div className="talk">
+          <div className="topic">{c.talk} </div>
+          <div className="speaker">{c.speaker}</div>
+        </div>
+      </Event>
+    ))}
+  </div>
+))
 
 const Schedule = () => (
   <TabsWrapper>
@@ -94,15 +207,7 @@ const Schedule = () => (
             that will help give you new perspectives on the experiences you
             create.
           </p>
-          <Placeholder>
-            <p className="align-center">
-              <span role="img" aria-label="sprout">
-                🌱
-              </span>
-              <br />
-              Schedule coming soon!
-            </p>
-          </Placeholder>
+          <div>{items[0]}</div>
         </TabPanel>
         <TabPanel>
           <h2>Day 2: Cultivate</h2>
@@ -110,15 +215,7 @@ const Schedule = () => (
             Cultivate new skills that will help you approach your craft in a new
             way, develop your leadership abilities and produce better results.
           </p>
-          <Placeholder>
-            <p className="align-center">
-              <span role="img" aria-label="tree">
-                🌳
-              </span>
-              <br />
-              Schedule coming soon!
-            </p>
-          </Placeholder>
+          <div>{items[1]}</div>
         </TabPanel>
         <TabPanel>
           <h2>Day 3: Harvest</h2>
@@ -127,15 +224,7 @@ const Schedule = () => (
             company, recognize our achievements and share our prosperity with
             the community.
           </p>
-          <Placeholder>
-            <p className="align-center">
-              <span role="img" aria-label="apple">
-                🍎
-              </span>
-              <br />
-              Schedule coming soon!
-            </p>
-          </Placeholder>
+          <div>{items[2]}</div>
         </TabPanel>
       </PanelWrapper>
     </Tabs>

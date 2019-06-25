@@ -109,6 +109,12 @@ const ButtonWrapper = styled.div`
   margin: 40px auto 100px;
 `
 
+const Disclaimer = styled.div`
+  margin-bottom: 40px;
+  font-size: 0.8rem;
+  margin-top: -10px;
+`
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -118,6 +124,12 @@ const IndexPage = ({ data }) => (
     </HeaderWrapper>
 
     <Wrapper>
+      <Disclaimer>
+        <span role="img" aria-label="pin">
+          📍
+        </span>{" "}
+        All talks take place in the <strong>Texas Conference Room</strong>.
+      </Disclaimer>
       <Statement>
         Three days of{" "}
         <Link to="/icymi-design-week-2018">inspiring experiences</Link> to
