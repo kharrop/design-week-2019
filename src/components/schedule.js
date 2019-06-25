@@ -1,4 +1,5 @@
 import React from "react"
+import SEO from "../components/seo"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import styled from "styled-components"
 
