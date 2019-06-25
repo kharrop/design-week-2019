@@ -113,7 +113,7 @@ const Days = [
       },
       {
         time: "1:15 - 2:15 p.m.",
-        talk: "Design Week Keynote Address",
+        talk: "Fireside Chat",
         speaker: "Diego Rodriguez",
       },
       {
