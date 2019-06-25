@@ -137,7 +137,7 @@ const IndexPage = ({ data }) => (
         <span role="img" aria-label="pin">
           📍
         </span>{" "}
-        All talks take place in the <strong>Texas Conference Room</strong>.
+        All talks are in the <strong>Texas Conference Room</strong>.
       </Disclaimer>
       <Statement>
         Three days of{" "}
