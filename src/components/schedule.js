@@ -70,7 +70,7 @@ const Event = styled.div`
     letter-spacing: 2px;
     font-size: 0.7rem;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     display: block;
     .topic {
       font-size: 1.2rem;
