@@ -113,6 +113,15 @@ const Disclaimer = styled.div`
   margin-bottom: 40px;
   font-size: 0.8rem;
   margin-top: -10px;
+  @media screen and (max-width: 900px) {
+    border-bottom: 1px solid #eee;
+    padding: 0 20px 20px;
+    margin-top: -10px;
+    margin-left: -30px;
+    margin-right: 30px;
+    width: 100vw;
+    text-align: center;
+  }
 `
 
 const IndexPage = ({ data }) => (
