@@ -54,6 +54,9 @@ const PanelWrapper = styled.div`
     font-size: 22px;
     margin-bottom: 8px;
   }
+  .react-tabs__tab-list {
+    top: 42px;
+  }
   .day-description {
     font-size: 15px;
     color: #777;
