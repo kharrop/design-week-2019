@@ -32,7 +32,7 @@ const TabsWrapper = styled.div`
     }
   }
   .description {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: #666;
   }
@@ -42,6 +42,9 @@ const TabsWrapper = styled.div`
     }
   }
   @media screen and (max-width: 900px) {
+    .description {
+      font-size: 1.1rem;
+    }
     ul {
       position: relative;
       padding-top: 0;
