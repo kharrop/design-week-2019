@@ -42,9 +42,6 @@ const TabsWrapper = styled.div`
     }
   }
   @media screen and (max-width: 900px) {
-    .description {
-      font-size: 1.1rem;
-    }
     ul {
       position: relative;
       padding-top: 0;
