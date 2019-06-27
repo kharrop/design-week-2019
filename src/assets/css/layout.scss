@@ -42,14 +42,18 @@ progress {
 template {
   display: none;
 }
-a {
+a,
+.trigger {
   color: #a200a1;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
-a:hover {
+a:hover,
+.trigger:active,
+.trigger:hover {
   outline-width: 0;
+  color: darken(#a200a1, 5%);
 }
 abbr[title] {
   border-bottom: none;
