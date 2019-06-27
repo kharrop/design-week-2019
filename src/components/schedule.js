@@ -36,6 +36,11 @@ const TabsWrapper = styled.div`
     line-height: 1.7;
     color: #666;
   }
+  @media screen and (max-width: 500px) {
+    .react-tabs__tab-list {
+      top: 42px;
+    }
+  }
   @media screen and (max-width: 900px) {
     ul {
       position: relative;
@@ -53,9 +58,6 @@ const PanelWrapper = styled.div`
     font-weight: 400;
     font-size: 22px;
     margin-bottom: 8px;
-  }
-  .react-tabs__tab-list {
-    top: 42px;
   }
   .day-description {
     font-size: 15px;
