@@ -34,11 +34,19 @@ const TabsWrapper = styled.div`
   .description {
     font-size: 1rem;
     line-height: 1.7;
-    color: #666;
+    color: #555;
   }
   @media screen and (max-width: 500px) {
     .react-tabs__tab-list {
       top: 42px;
+      overflow-x: auto;
+      margin-left: -30px;
+      padding-left: 30px;
+      margin-right: -30px;
+      padding-right: 30px;
+      li {
+        min-width: 65px;
+      }
     }
   }
   @media screen and (max-width: 900px) {
@@ -61,7 +69,7 @@ const PanelWrapper = styled.div`
   }
   .day-description {
     font-size: 15px;
-    color: #777;
+    color: #555;
     margin-bottom: 40px;
   }
   .Collapsible {
@@ -114,6 +122,47 @@ const Divider = styled.span`
 `
 
 const Days = [
+  {
+    day: "Monday",
+    data: [
+      {
+        time: "3 - 5 p.m.",
+        talk: "DW19+IWN Fireside Chat: Designing an Inclusive Company Culture",
+        speaker: "Mandy Price and Scott Beth",
+        description: (
+          <div>
+            <p>
+              Hear Mandy Price, Co-founder and CEO of Kanarys, Inc. and our very
+              own Scott Beth, Chief Diversity and Inclusion Officer share their
+              perspectives and practices around designing, creating and
+              sustaining a diverse, inclusive and equitable company culture that
+              helps everyone in it thrive.
+            </p>
+
+            <p>
+              They want to hear from you too – they’ll be taking your questions
+              live at the Texas conference room from 3-4 p.m. CT as well as via{" "}
+              {""}
+              <a
+                href="https://www.slido.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                www.slido.com
+              </a>
+              . You may submit questions as early as Tuesday, July 9 with the
+              code <strong>#diversity</strong>.
+            </p>
+
+            <p>
+              And join us for food and drink afterwards at our social hour in
+              The PanHandle Café.
+            </p>
+          </div>
+        ),
+      },
+    ],
+  },
   {
     day: "Tuesday",
     data: [
@@ -260,13 +309,23 @@ const Schedule = () => (
   <TabsWrapper>
     <Tabs>
       <TabList>
+        <Tab>Mon, July 15</Tab>
+        <Divider>•</Divider>
         <Tab>Tue, July 16</Tab>
         <Divider>•</Divider>
         <Tab>Wed, July 17</Tab>
         <Divider>•</Divider>
         <Tab>Thu, July 18</Tab>
+        <Divider>&nbsp;</Divider>
       </TabList>
       <PanelWrapper>
+        <TabPanel>
+          <p className="day-description">
+            Kick off Design Week 2019 with a very special session sponsored by
+            the Intuit Women’s Network.
+          </p>
+          <div>{items[0]}</div>
+        </TabPanel>
         <TabPanel>
           <h2>Day 1: Plant seeds</h2>
           <p className="day-description">
@@ -274,7 +333,7 @@ const Schedule = () => (
             that will help give you new perspectives on the experiences you
             create.
           </p>
-          <div>{items[0]}</div>
+          <div>{items[1]}</div>
         </TabPanel>
         <TabPanel>
           <h2>Day 2: Cultivate</h2>
@@ -282,7 +341,7 @@ const Schedule = () => (
             Cultivate new skills that will help you approach your craft in a new
             way, develop your leadership abilities and produce better results.
           </p>
-          <div>{items[1]}</div>
+          <div>{items[2]}</div>
         </TabPanel>
         <TabPanel>
           <h2>Day 3: Harvest</h2>
@@ -291,7 +350,7 @@ const Schedule = () => (
             company, recognize our achievements and share our prosperity with
             the community.
           </p>
-          <div>{items[2]}</div>
+          <div>{items[3]}</div>
         </TabPanel>
       </PanelWrapper>
     </Tabs>

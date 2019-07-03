@@ -19,6 +19,11 @@ const Wrapper = styled.div`
       box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
     }
   }
+  @media screen and (max-width: 900px) {
+    .disclaimer {
+      display: block;
+    }
+  }
 `
 const Statement = styled.h1`
   a {
@@ -137,7 +142,10 @@ const IndexPage = ({ data }) => (
         <span role="img" aria-label="pin">
           📍
         </span>{" "}
-        All talks are in the <strong>Texas Conference Room</strong>.
+        All talks are in the <strong>Texas Conference Room</strong>.{" "}
+        <span className="disclaimer">
+          This event is for full-time Intuit employees and special guests only.
+        </span>
       </Disclaimer>
       <Statement>
         Three days of{" "}
