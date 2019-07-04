@@ -149,7 +149,7 @@ const IndexPage = ({ data }) => (
       </Disclaimer>
       <Statement>
         Three days of{" "}
-        <Link to="/icymi-design-week-2018">inspiring experiences</Link> to
+        <Link to="/icymi-design-week-2018">inspiring experiences</Link> that
         engage and nurture your creativity.
       </Statement>
 

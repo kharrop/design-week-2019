@@ -9,9 +9,14 @@ import styled from "styled-components"
 
 const PostWrapper = styled.div`
   p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 60px;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+  }
+  @media screen and (max-width: 500px) {
+    p {
+      font-size: 0.9rem;
+    }
   }
 
   p + ul {

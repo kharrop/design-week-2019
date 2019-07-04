@@ -37,6 +37,9 @@ const TabsWrapper = styled.div`
     color: #555;
   }
   @media screen and (max-width: 500px) {
+    .description {
+      font-size: 0.9rem;
+    }
     .react-tabs__tab-list {
       top: 42px;
       overflow-x: auto;
