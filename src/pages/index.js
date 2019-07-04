@@ -154,33 +154,34 @@ const IndexPage = ({ data }) => (
       </Statement>
 
       <Schedule />
-
-      <Wrapper>
-        <PhotoList>
-          {data.allInstaNode.edges.map(({ node }) => (
-            <div className="gram" key={node.id}>
-              <a
-                href={"https://www.instagram.com/p/" + node.id}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "block",
-                }}
-              >
-                <Img
-                  alt="pcgdesignweek"
-                  fluid={node.localFile.childImageSharp.fluid}
-                />
-              </a>
-            </div>
-          ))}
-        </PhotoList>
-      </Wrapper>
-      <ButtonWrapper>
-        <Button className="outline" href="/media" target="_self">
-          More media
-        </Button>
-      </ButtonWrapper>
+      {data.allInstaNode.edges && (
+        <Wrapper>
+          <PhotoList>
+            {data.allInstaNode.edges.map(({ node }) => (
+              <div className="gram" key={node.id}>
+                <a
+                  href={"https://www.instagram.com/p/" + node.id}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "block",
+                  }}
+                >
+                  <Img
+                    alt="pcgdesignweek"
+                    fluid={node.localFile.childImageSharp.fluid}
+                  />
+                </a>
+              </div>
+            ))}
+          </PhotoList>
+          <ButtonWrapper>
+            <Button className="outline" href="/media" target="_self">
+              More media
+            </Button>
+          </ButtonWrapper>
+        </Wrapper>
+      )}
     </Wrapper>
   </Layout>
 )
