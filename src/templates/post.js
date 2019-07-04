@@ -13,11 +13,6 @@ const PostWrapper = styled.div`
     line-height: 1.6;
     margin-bottom: 50px;
   }
-  @media screen and (max-width: 500px) {
-    p {
-      font-size: 0.9rem;
-    }
-  }
 
   p + ul {
     margin-top: -30px;
