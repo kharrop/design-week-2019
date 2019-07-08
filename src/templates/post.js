@@ -14,6 +14,10 @@ const PostWrapper = styled.div`
     margin-bottom: 50px;
   }
 
+  hr {
+    margin-bottom: 50px;
+  }
+
   p + ul {
     margin-top: -30px;
     margin-bottom: 60px;
