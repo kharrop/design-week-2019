@@ -64,7 +64,7 @@ module.exports = {
       resolve: `gatsby-source-instagram`,
       options: {
         type: `hashtag`,
-        hashtag: `pcgdesignweek`,
+        hashtag: `intuitdesignweek`,
       },
     },
     `gatsby-plugin-sass`,

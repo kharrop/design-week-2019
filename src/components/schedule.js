@@ -257,13 +257,53 @@ const Days = [
         time: "9 a.m. – 12 p.m.",
         talk: "We Care & Give Back",
         speaker: "ManeGait",
+        description: (
+          <div>
+            <p>
+              ManeGait Therapeutic Horsemanship is a PATH Premier Accredited
+              Equine Center dedicated to helping children and adults with
+              physical, emotional, cognitive, sensory, and behavioral
+              disabilities.
+            </p>
+
+            <p>
+              Remember to{" "}
+              <a
+                href=" https://intuitwcgb.benevity.org/volunteer/4068?share=1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                log your WCGB hours
+              </a>
+              !
+            </p>
+          </div>
+        ),
       },
       {
         time: "1:30 - 2:30 p.m.",
         talk: "Reflections on our Big Bets",
         speaker: "Panel discussion",
-        description:
-          "Join us for a discussion with cross-functional leaders from across Intuit as we reflect on the past year, our performance against our big bets and our vision for the future.",
+        description: (
+          <div>
+            <p>
+              Join us for a discussion with cross-functional leaders from across
+              Intuit as we reflect on the past year, our performance against our
+              big bets and our vision for the future.
+            </p>
+            <p>
+              Ask our design leaders questions as early as Friday, July 12 at{" "}
+              <a
+                href="https://www.slido.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                www.slido.com
+              </a>{" "}
+              with the code <strong>#DW19bets</strong>.
+            </p>
+          </div>
+        ),
       },
       {
         time: "2:45 - 3:45 p.m.",

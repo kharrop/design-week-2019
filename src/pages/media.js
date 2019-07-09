@@ -38,7 +38,6 @@ export const pageQuery = graphql`
         node {
           id
           likes
-          comments
           mediaType
           preview
           original
@@ -77,11 +76,11 @@ const Media = ({ data }) => (
             <strong>{data.allInstaNode.totalCount}</strong>&nbsp;recent
             Instagram photos tagged with{" "}
             <a
-              href="https://www.instagram.com/explore/tags/pcgdesignweek/?hl=en"
+              href="https://www.instagram.com/explore/tags/intuitdesignweek/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
             >
-              #pcgdesignweek
+              #intuitdesignweek
             </a>
           </Statement>
         </div>

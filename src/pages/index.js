@@ -75,7 +75,6 @@ export const PageQuery = graphql`
         node {
           id
           likes
-          comments
           mediaType
           preview
           original
