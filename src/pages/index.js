@@ -7,7 +7,9 @@ import Img from "gatsby-image"
 import Schedule from "../components/schedule"
 import Button from "../components/button"
 import image from "../images/home-bg.jpg"
+import posters from "../images/posters.jpg"
 import Branding from "../images/svg/main-brand.svg"
+/* eslint-disable */
 
 const Wrapper = styled.div`
   a {
@@ -18,6 +20,10 @@ const Wrapper = styled.div`
     &:hover {
       box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
     }
+  }
+  .post-message {
+    margin-bottom: 50px;
+    line-height: 1.8;
   }
   @media screen and (max-width: 900px) {
     .disclaimer {
@@ -137,6 +143,25 @@ const IndexPage = ({ data }) => (
     </HeaderWrapper>
 
     <Wrapper>
+      <div className="post-message">
+        <h3>That's a wrap!</h3>
+        <p>
+          {" "}
+          Thanks to everyone that attended Design Week 2019. <br />
+          We'll be back in June 2020! In the meantime, help us improve our event
+          by{" "}
+          <a
+            href={"https://sherridrury.typeform.com/to/DtoJyR"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            providing your feedback
+          </a>
+          .
+        </p>
+        <img src={posters} alt="posters from design week" />
+      </div>
+      {/* 
       <Disclaimer>
         <span role="img" aria-label="pin">
           📍
@@ -146,6 +171,8 @@ const IndexPage = ({ data }) => (
           This event is for full-time Intuit employees and special guests only.
         </span>
       </Disclaimer>
+*/}
+
       <Statement>
         Three days of{" "}
         <Link to="/icymi-design-week-2018">inspiring experiences</Link> that
