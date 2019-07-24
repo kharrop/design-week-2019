@@ -370,7 +370,7 @@ const Schedule = () => (
           <div>{items[0]}</div>
         </TabPanel>
         <TabPanel>
-          <h2>Day 1: Plant seeds</h2>
+          <h2>Day 1: Seeds</h2>
           <p className="day-description">
             Plant seeds of inspiration from emerging trends and industry experts
             that will help give you new perspectives on the experiences you
