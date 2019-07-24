@@ -7,7 +7,6 @@ import Img from "gatsby-image"
 import Schedule from "../components/schedule"
 import Button from "../components/button"
 import image from "../images/home-bg.jpg"
-import posters from "../images/posters.jpg"
 import Branding from "../images/svg/main-brand.svg"
 /* eslint-disable */
 
@@ -75,6 +74,13 @@ const HeaderWrapper = styled.div`
 
 export const PageQuery = graphql`
   query {
+    posters: file(relativePath: { eq: "posters.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     allInstaNode(sort: { order: DESC, fields: [timestamp] }, limit: 4) {
       totalCount
       edges {
@@ -146,7 +152,6 @@ const IndexPage = ({ data }) => (
       <div className="post-message">
         <h3>That's a wrap!</h3>
         <p>
-          {" "}
           Thanks to everyone that attended Design Week 2019. <br />
           We'll be back in June 2020! In the meantime, help us improve our event
           by{" "}
@@ -159,7 +164,7 @@ const IndexPage = ({ data }) => (
           </a>
           .
         </p>
-        <img src={posters} alt="posters from design week" />
+        <Img fluid={data.posters.childImageSharp.fluid} />
       </div>
       {/* 
       <Disclaimer>
